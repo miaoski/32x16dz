@@ -54,11 +54,11 @@ for fp,loc in words:
     #        print '{0:#04x}, {1:#04x},'.format(ord(shape[i]), ord(shape[i+1])),                   # 輸出成 hex
     #    print '0x00, 0x00'
     #    print ','
+    canvas[0].append(0x00)              # 最上面留白
+    canvas[0].append(0x00)
     for i in range(0, 15):
-        canvas[i].append(ord(shape[i * 2]))
-        canvas[i].append(ord(shape[i * 2 + 1]))
-    canvas[15].append(0x00)
-    canvas[15].append(0x00)
+        canvas[i+1].append(ord(shape[i * 2]))
+        canvas[i+1].append(ord(shape[i * 2 + 1]))
 
 for i in range(16):
     for x in canvas[i]:
